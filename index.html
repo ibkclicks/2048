@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Bootstrap CSS via CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>2048 Game</title>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mt-4">2048</h1>
+        <div class="score mb-4">Score: 0</div>
+        <div class="grid">
+            <!-- Game tiles will be dynamically generated here -->
+        </div>
+        <div class="game-over mt-4">
+            <p class="lead">Game Over!</p>
+            <button class="btn btn-primary" onclick="restartGame()">Restart</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
