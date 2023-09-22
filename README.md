@@ -1,52 +1,52 @@
+# 2048
+A game of 2048 in vanilla JavaScript, HTML and CSS
+
+In this walkthrough, we make the very popular game 2048 in JavaScript, HTML and CSS! No canvas required!  (Now with more accurate subtitles for programmers)
+
+Full video walkthrough [here](https://youtu.be/aDn2g8XfSMc)
+
+### Rules of 2048:
+2048 is played on a 4×4 grid, with numbered tiles that slide smoothly when a player moves them using the four arrow keys. Each time you slide, a new tile will randomly appear in an empty spot on the board. Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided. The resulting tile cannot merge with another tile again in the same move. 
+
+### Tools and Software I used in this video:
+- TabNine By Codota: https://bit.ly/Codota
+- VSCode: https://bit.ly/VSCode-Editor
+
+### By creating this popular game we will learn the following javaScript Methods:
+- querySelector()
+- getElementById()
+- createElement()
+- appendChild()
+- push()
+- Math.floor()
+- Math.random()
+- length
+- innerHTML
+- parseInt()
+- filter()
+- Array()
+- fill()
+- concat()
+- keyCode
+- addEventListener()
+- removeEventListener()
+- setTimeout()
+- clearInterval()
+- setInterval()
+
+If you did like this video, please do Like and [Subscribe](youtube.com/aniakubow) so I know to make others like this!
+
+I would love to see what you have made so please do share your finished games with me on twitter! My handle is @ania_kubow.
 
 
----
+### MIT Licence
 
-# 2048 Game
+Copyright (c) 2020 Ania Kubow
 
-## Overview
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-This is a simple implementation of the popular game "2048." The objective of the game is to slide numbered tiles on a grid to combine them and reach the 2048 tile.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## Technologies Used
+*Translation: Ofcourse you can use this for you project! Just make sure to say where you got this from :)
 
-### Frontend
-
-- **HTML:** The game's user interface is built using HTML, defining the structure of the game board and user interface elements.
-
-- **CSS:** Styling for the game board, tiles, and other elements is applied using CSS, making the game visually appealing.
-
-- **JavaScript:** Game logic and user interactions are handled using JavaScript, including tile movement, merging, scoring, and win/lose conditions.
-
-- **Bootstrap:** Bootstrap is used for styling some UI components within the game, providing a responsive and consistent design.
-
-### How to Play
-
-- Use the arrow keys (left, right, up, down) to slide the tiles in the respective directions.
-
-- Tiles with the same number will merge into one when they collide.
-
-- The game is won when you reach the 2048 tile.
-
-- The game is lost when there are no valid moves left.
-
-### Getting Started
-
-1. Clone this repository to your local machine.
-
-2. Open the `index.html` file in your web browser to start playing.
-
-### Features to Implement
-
-- [ ] Implement scoring system.
-- [ ] Add win/lose condition messages.
-- [ ] Implement a "New Game" button.
-- [ ] Enhance styling and animations.
-
-### Credits
-
-- The initial code structure for this game was inspired by 2048.
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

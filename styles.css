@@ -1,92 +1,65 @@
-.container {
-  width: 500px;
-  margin: 0 auto;
-  text-align: center;
+body {
+  background-color: #faf8ef;
+  display: flex;
+  justify-content: center;
+  font-family: "Clear Sans", "Helvetica Neue"
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 80px;
+  line-height: 0.7;
+  color: #2c2c2c;
+  margin: 0px;
 }
 
-.score {
-  font-size: 20px;
+.container {
+  width: 468px;
+  margin-top: 30px;
 }
 
-.grid {
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 100px);
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.tile {
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  font-size: 30px;
-  border: 1px solid black;
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  width: 456px;
+  height: 456px;
+  background-color: #2c2c2c;
+  border: 7px solid #2c2c2c;
+  border-radius: 6px;
+  margin-top: 20px;
 }
 
-.tile.empty {
-  background-color: #ffffff;
+.grid div {
+  width: 100px;
+  height: 100px;
+  margin: 7px;
+  border-radius: 3px;
+  background-color: #EEE4DA;
+  color: #7f7c77;
+  font-weight: bold;
+  text-align: center;
+  font-size: 60px;
+  line-height: 1.6;
 }
 
-.tile.2 {
-  background-color: #eee4da;
+.score-container {
+  text-align: center;
+  width: 70px;
+  height: 60px;
+  border-radius: 3px;
+  background-color: #8f7a66;
+  color: #FFFFFF;
 }
 
-.tile.4 {
-  background-color: #ede0c8;
+#score {
+  font-size: 30px;
 }
 
-.tile.8 {
-  background-color: #f2b179;
+.score-title {
+  font-size: 16px;
 }
-
-.tile.16 {
-  background-color: #f59563;
-}
-
-.tile.32 {
-  background-color: #f67c5f;
-}
-
-.tile.64 {
-  background-color: #f65e3b;
-}
-
-.tile.128 {
-  background-color: #edcf72;
-}
-
-.tile.256 {
-  background-color: #edcc62;
-}
-
-.tile.512 {
-  background-color: #edc852;
-}
-
-.tile.1024 {
-  background-color: #edc542;
-}
-
-.tile.2048 {
-  background-color: #edc232;
-}
-
-.game-over {
-  display: none;
-}
-
-.game-over p {
-  font-size: 20px;
-}
-
-.game-over button {
-  font-size: 20px;
-  cursor: pointer;
-}
-
