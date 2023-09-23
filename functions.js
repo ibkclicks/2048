@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () =>  {
       checkForGameOver()
     } else generate()
   }
+
   //movement functions
   function moveRight() {
     for (let i=0; i < 16; i++) {
@@ -113,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () =>  {
       squares[i+(width*3)].innerHTML = newColumn[3]
     }
   }
+
 //addition function
   function combineRow() {
     for (let i =0; i < 15; i++) {
@@ -152,6 +154,57 @@ document.addEventListener('DOMContentLoaded', () =>  {
       keyDown()
     }
   }
+  // Handle keyboard presses
+  function handleKeyPress(e) {
+    if (e.keyCode === 37) {
+        keyLeft();
+    } else if (e.keyCode === 38) {
+        keyUp();
+    } else if (e.keyCode === 39) {
+        keyRight();
+    } else if (e.keyCode === 40) {
+        keyDown();
+    }
+}
+document.addEventListener('keyup', handleKeyPress);
+
+// Handle touch events
+let startX, startY;
+
+function handleTouchStart(event) {
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+}
+
+function handleTouchMove(event) {
+    event.preventDefault();
+    const endX = event.touches[0].clientX;
+    const endY = event.touches[0].clientY;
+
+    const deltaX = startX - endX;
+    const deltaY = startY - endY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 0) {
+            // Swipe left
+            keyLeft();
+        } else {
+            // Swipe right
+            keyRight();
+        }
+    } else {
+        if (deltaY > 0) {
+            // Swipe up
+            keyUp();
+        } else {
+            // Swipe down
+            keyDown();
+        }
+    }
+}
+
+document.querySelector('.grid').addEventListener('touchstart', handleTouchStart, false);
+document.querySelector('.grid').addEventListener('touchmove', handleTouchMove, false);
   document.addEventListener('keyup', handleKeyPress)
 
   function keyRight() {
