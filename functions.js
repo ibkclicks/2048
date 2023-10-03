@@ -20,14 +20,18 @@ document.addEventListener('DOMContentLoaded', () =>  {
   }
   createBoard()
 
-  //generate a new number
-  function generate() {
-    randomNumber = Math.floor(Math.random() * squares.length)
-    if (squares[randomNumber].innerHTML == 0) {
-      squares[randomNumber].innerHTML = 2
-      checkForGameOver()
-    } else generate()
+  // generate a new number (either 2 or 4)
+function generate() {
+  randomNumber = Math.floor(Math.random() * squares.length);
+  const randomValue = Math.random() < 0.9 ? 2 : 4; // 90% chance for 2, 10% chance for 4
+  if (squares[randomNumber].innerHTML == 0) {
+      squares[randomNumber].innerHTML = randomValue;
+      checkForGameOver();
+  } else {
+      generate();
   }
+}
+
 
   //movement functions
   function moveRight() {
@@ -73,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () =>  {
       }
     }
   }
-
 
   function moveUp() {
     for (let i=0; i < 4; i++) {
@@ -246,20 +249,41 @@ document.querySelector('.grid').addEventListener('touchmove', handleTouchMove, f
     }
   }
 
-  //check if there are no zeros on the board to lose
-  function checkForGameOver() {
-    let zeros = 0
-    for (let i=0; i < squares.length; i++) {
+// check if there are no zeros on the board and no possible moves to lose
+function checkForGameOver() {
+  let zeros = 0;
+  for (let i = 0; i < squares.length; i++) {
       if (squares[i].innerHTML == 0) {
-        zeros++
+          zeros++;
       }
-    }
-    if (zeros === 0) {
-      resultDisplay.innerHTML = 'You LOSE'
-      document.removeEventListener('keyup', control)
-      setTimeout(() => clear(), 3000)
-    }
   }
+
+  // Check for possible moves (horizontally or vertically)
+  let canMove = false;
+  for (let i = 0; i < squares.length; i++) {
+      if (
+          i % width < width - 1 &&
+          squares[i].innerHTML == squares[i + 1].innerHTML
+      ) {
+          canMove = true;
+          break;
+      }
+      if (
+          i + width < squares.length &&
+          squares[i].innerHTML == squares[i + width].innerHTML
+      ) {
+          canMove = true;
+          break;
+      }
+  }
+
+  if (zeros === 0 && !canMove) {
+      resultDisplay.innerHTML = 'You LOSE';
+      document.removeEventListener('keyup', handleKeyPress);
+      setTimeout(() => clear(), 3000);
+  }
+}
+
 
   //clear timer
   function clear() {
