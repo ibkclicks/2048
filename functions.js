@@ -23,7 +23,7 @@ createBoard()
   // generate a new number (either 2 or 4)
 function generate() {
   randomNumber = Math.floor(Math.random() * squares.length);
-  const randomValue = Math.random() < 0.6 ? 2 : 4; // 60% chance for 2, 40% chance for 4
+  const randomValue = Math.random() < 0.7 ? 2 : 4; // 70% chance for 2, 30% chance for 4
   if (squares[randomNumber].innerHTML == 0) {
       squares[randomNumber].innerHTML = randomValue;
       checkForGameOver();
