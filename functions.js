@@ -170,15 +170,20 @@ function handleKeyPress(e) {
 }
 document.addEventListener('keyup', handleKeyPress);
 
-// Handle touch events
-  let startX, startY;
+let startX, startY;
+let swipeInProgress = false;
 
 function handleTouchStart(event) {
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
+    swipeInProgress = true;
 }
 
 function handleTouchMove(event) {
+    if (!swipeInProgress) {
+        return;
+    }
+
     event.preventDefault();
     const endX = event.touches[0].clientX;
     const endY = event.touches[0].clientY;
@@ -201,9 +206,12 @@ function handleTouchMove(event) {
         } else {
             // Swipe down
             keyDown();
-            }
         }
     }
+
+    // Reset the swipe in progress flag
+    swipeInProgress = false;
+}
 
 document.querySelector('.grid').addEventListener('touchstart', handleTouchStart, false);
 document.querySelector('.grid').addEventListener('touchmove', handleTouchMove, false);
